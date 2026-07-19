@@ -44,16 +44,31 @@ body::before{
 }
 
 .container{
-    width:980px;
-    max-width:92%;
-    background:rgba(15,22,33,.82);
-    backdrop-filter:blur(10px);
-    border:1px solid rgba(97,216,255,.25);
-    border-radius:18px;
-    padding:35px;
-    box-shadow:
-    0 0 50px rgba(0,0,0,.6),
-    0 0 30px rgba(97,216,255,.08);
+<div class="header">
+
+    <div>
+        <h1>CCTV ARCHIVE</h1>
+        <div class="subtitle">
+            Federation of Crime Investigation Agency<br>
+            Surveillance Evidence Review System
+        </div>
+    </div>
+
+    <div class="rec">
+        <div class="dot"></div>
+        REC
+    </div>
+
+</div>
+
+<label>Evidence Archive Password</label>
+<input type="password" id="password">
+
+<button onclick="unlock()">
+UNLOCK ARCHIVE
+</button>
+
+<div id="error"></div>
 }
 
 .header{
