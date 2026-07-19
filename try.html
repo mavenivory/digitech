@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CCTV Archive</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap" rel="stylesheet">
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    background:#050505;
+    color:#00ff88;
+    font-family:'Share Tech Mono', monospace;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    min-height:100vh;
+}
+
+.container{
+    width:900px;
+    max-width:90%;
+    border:1px solid #00ff88;
+    padding:40px;
+    box-shadow:0 0 20px rgba(0,255,136,.15);
+}
+
+h1{
+    margin-bottom:10px;
+}
+
+.subtitle{
+    color:#78ffc4;
+    margin-bottom:30px;
+}
+
+input{
+    width:100%;
+    padding:12px;
+    background:#111;
+    border:1px solid #00ff88;
+    color:#00ff88;
+    font-family:inherit;
+    font-size:16px;
+}
+
+button{
+    margin-top:15px;
+    padding:12px 25px;
+    background:#00ff88;
+    color:#000;
+    border:none;
+    cursor:pointer;
+    font-family:inherit;
+    font-weight:bold;
+}
+
+button:hover{
+    opacity:.85;
+}
+
+#error{
+    color:#ff6666;
+    margin-top:15px;
+}
+
+#archive{
+    display:none;
+    margin-top:40px;
+}
+
+.file{
+    border-left:3px solid #00ff88;
+    padding-left:15px;
+    margin:30px 0;
+}
+
+.time{
+    color:#9affcf;
+}
+
+pre{
+    white-space:pre-wrap;
+    margin-top:10px;
+    line-height:1.7;
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>CCTV ARCHIVE</h1>
+<p class="subtitle">
+Fictional archive for demonstration purposes.
+</p>
+
+<label>Archive Password</label>
+<input type="password" id="password">
+
+<button onclick="unlock()">
+Open Archive
+</button>
+
+<div id="error"></div>
+
+<div id="archive">
+
+<h2>INDEX</h2>
+
+<pre>
+cam_01.md
+cam_02.md
+cam_03.md
+cam_04.md
+</pre>
+
+<div class="file">
+
+<h3>cam_01.md</h3>
+
+<div class="time">
+18:37:09 | Front Entrance
+</div>
+
+<pre>
+• Individual enters the building.
+• Brief pause near reception.
+• Walks toward east corridor.
+</pre>
+
+</div>
+
+<div class="file">
+
+<h3>cam_02.md</h3>
+
+<div class="time">
+18:43:51 | East Corridor
+</div>
+
+<pre>
+• Individual proceeds alone.
+• Opens restricted access door.
+• Enters interior hallway.
+</pre>
+
+</div>
+
+<div class="file">
+
+<h3>cam_03.md</h3>
+
+<div class="time">
+18:51:27 | Storage Area
+</div>
+
+<pre>
+• Activity partially obscured.
+• Several movements detected.
+• Individual leaves carrying an unidentified item.
+</pre>
+
+</div>
+
+<div class="file">
+
+<h3>cam_04.md</h3>
+
+<div class="time">
+19:02:14 | Rear Exit
+</div>
+
+<pre>
+• Individual exits building.
+• Vehicle arrives moments later.
+• No additional movement recorded.
+</pre>
+
+</div>
+
+</div>
+
+</div>
+
+<script>
+
+function unlock(){
+
+const password=document.getElementById("password").value;
+
+if(password==="immobulus"){
+
+document.getElementById("archive").style.display="block";
+document.getElementById("error").innerHTML="";
+
+}else{
+
+document.getElementById("error").innerHTML="Incorrect password.";
+
+}
+
+}
+
+</script>
+
+</body>
+</html>
