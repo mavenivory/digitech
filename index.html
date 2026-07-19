@@ -215,7 +215,164 @@ pre{
     line-height:1.8;
     color:#dce5ef;
 }
+/* ===========================
+   RESPONSIVE
+=========================== */
 
+html{
+    -webkit-text-size-adjust:100%;
+}
+
+body{
+    padding:20px;
+    align-items:flex-start;
+}
+
+.login-box,
+.archive{
+    margin:30px auto;
+}
+
+/* Tablet */
+
+@media (max-width:900px){
+
+    .archive{
+        padding:25px;
+    }
+
+    .header{
+        flex-direction:column;
+        align-items:flex-start;
+        gap:15px;
+    }
+
+    .header h2{
+        font-size:1.5rem;
+        letter-spacing:2px;
+    }
+
+    .index{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+}
+
+/* Mobile */
+
+@media (max-width:600px){
+
+    body{
+        padding:15px;
+    }
+
+    .login-box{
+        width:100%;
+        padding:25px;
+        border-radius:15px;
+    }
+
+    .login-box h1{
+        font-size:1.4rem;
+        letter-spacing:2px;
+    }
+
+    .subtitle{
+        font-size:.9rem;
+        line-height:1.7;
+    }
+
+    label{
+        font-size:.9rem;
+    }
+
+    input,
+    button{
+        padding:15px;
+        font-size:16px;
+    }
+
+    .archive{
+        width:100%;
+        padding:18px;
+        border-radius:15px;
+    }
+
+    .header{
+        margin-bottom:20px;
+    }
+
+    .header h2{
+        font-size:1.3rem;
+    }
+
+    .rec{
+        font-size:.9rem;
+    }
+
+    .index{
+        grid-template-columns:1fr;
+        gap:10px;
+        margin-bottom:25px;
+    }
+
+    .index div{
+        padding:14px;
+        font-size:.9rem;
+    }
+
+    .files{
+        gap:15px;
+    }
+
+    .file{
+        padding:16px;
+    }
+
+    .file h3{
+        font-size:1rem;
+    }
+
+    .time{
+        font-size:.85rem;
+    }
+
+    pre{
+        font-size:.83rem;
+        line-height:1.6;
+        overflow-wrap:anywhere;
+        word-break:break-word;
+    }
+
+}
+
+/* Extra small */
+
+@media (max-width:380px){
+
+    .login-box{
+        padding:20px;
+    }
+
+    .login-box h1{
+        font-size:1.2rem;
+    }
+
+    .header h2{
+        font-size:1.1rem;
+    }
+
+    input,
+    button{
+        padding:13px;
+        font-size:15px;
+    }
+
+    pre{
+        font-size:.78rem;
+    }
+
+}
 </style>
 </head>
 <body>
