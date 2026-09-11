@@ -45,6 +45,14 @@ body{padding:20px;align-items:flex-start;}
 @media (max-width:900px){.archive{padding:25px;}.header{flex-direction:column;align-items:flex-start;gap:15px;}.header h2{font-size:1.5rem;letter-spacing:2px;}.index{grid-template-columns:repeat(2,1fr);}}
 @media (max-width:600px){body{padding:15px;}.login-box{width:100%;padding:25px;border-radius:15px;}.login-box h1{font-size:1.4rem;letter-spacing:2px;}.subtitle{font-size:.9rem;line-height:1.7;}label{font-size:.9rem;}input,button{padding:15px;font-size:16px;}.archive{width:100%;padding:18px;border-radius:15px;}.header{margin-bottom:20px;}.header h2{font-size:1.3rem;}.rec{font-size:.9rem;}.index{grid-template-columns:1fr;gap:10px;margin-bottom:25px;}.index div{padding:14px;font-size:.9rem;}.files{gap:15px;}.file{padding:16px;}.file h3{font-size:1rem;}.time{font-size:.85rem;}pre{font-size:.83rem;line-height:1.6;overflow-wrap:anywhere;word-break:break-word;}}
 @media (max-width:380px){.login-box{padding:20px;}.login-box h1{font-size:1.2rem;}.header h2{font-size:1.1rem;}input,button{padding:13px;font-size:15px;}pre{font-size:.78rem;}}
+
+.tabs{display:flex;gap:10px;margin:0 0 25px;flex-wrap:wrap;}
+.tab-btn{width:auto;margin:0;padding:11px 18px;border:1px solid rgba(97,216,255,.25);background:#121b26;color:#93aac0;border-radius:9px;}
+.tab-btn.active{background:#61d8ff;color:#081018;box-shadow:0 0 18px rgba(97,216,255,.22);}
+.archive-panel{display:none;}
+.archive-panel.active{display:block;}
+@media (max-width:600px){.tabs{display:grid;grid-template-columns:1fr 1fr}.tab-btn{width:100%;padding:11px 8px;font-size:.8rem;}}
+
 </style>
 </head>
 <body>
@@ -57,10 +65,17 @@ body{padding:20px;align-items:flex-start;}
 <div id="error"></div>
 </div>
 <div class="archive" id="archive">
+
 <div class="header"><h2>VIDEO ARCHIVE</h2><div class="rec"><div class="dot"></div>LIVE REVIEW</div></div>
-<div class="archive-date"><span>ARCHIVE DATE</span><h3>25 August 2026</h3></div>
-<div class="index"><div><span>◉ CAM 01</span><br><small>Main Entrance</small></div><div><span>◉ CAM 02</span><br><small>VIP Check In</small></div><div><span>◉ CAM 03</span><br><small>First Floor Bar</small></div><div><span>◉ CAM 04</span><br><small>Second Floor Bar</small></div><div><span>◉ CAM 05</span><br><small>Private Room 1</small></div><div><span>● CAM 06</span><br><small>Third Floor Bar</small></div><div><span>● CAM 07</span><br><small>Staff Lounge</small></div></div>
-<div class="files">
+<div class="tabs">
+  <button class="tab-btn active" onclick="showArchive('aug',this)">25 AUGUST 2026</button>
+  <button class="tab-btn" onclick="showArchive('sep',this)">10 SEPTEMBER 2026</button>
+</div>
+
+<div id="panel-aug" class="archive-panel active">
+  <div class="archive-date"><span>ARCHIVE DATE</span><h3>25 August 2026</h3></div>
+  <div class="index"><div><span>◉ CAM 01</span><br><small>Main Entrance</small></div><div><span>◉ CAM 02</span><br><small>VIP Check In</small></div><div><span>◉ CAM 03</span><br><small>First Floor Bar</small></div><div><span>◉ CAM 04</span><br><small>Second Floor Bar</small></div><div><span>◉ CAM 05</span><br><small>Private Room 1</small></div><div><span>● CAM 06</span><br><small>Third Floor Bar</small></div><div><span>● CAM 07</span><br><small>Staff Lounge</small></div></div>
+  <div class="files">
 <div class="file"><h3>◉ CAM 01</h3><div class="time">Casino First Floor | CCTV Main Entrance | REC</div><pre>19.02 – dr. Yohan memasuki kasino dengan memakai setelan jas berwarna hitam.
 
 22.13 – Asisten dr. Yohan tampak memasuki kasino dengan kemeja berwarna biru tua.
@@ -156,7 +171,158 @@ body{padding:20px;align-items:flex-start;}
 <div class="file"><h3>● CAM 07</h3><div class="time">Casino Third Floor | CCTV Staff Lounge | REC</div><pre>Tidak ada yang mencurigakan. Hanya ada staff yang hilir mudik.</pre></div>
 </div>
 </div>
+
+<div id="panel-sep" class="archive-panel">
+  <div class="archive-date"><span>ARCHIVE DATE</span><h3>10 September 2026</h3></div>
+  <div class="index">
+<div><span>◉ CAM 01</span><br><small>Main Entrance</small></div>
+<div><span>◉ CAM 02</span><br><small>VIP Check In</small></div>
+<div><span>◉ CAM 03</span><br><small>First Floor Bar</small></div>
+<div><span>◉ CAM 04</span><br><small>Second Floor Bar</small></div>
+<div><span>◉ CAM 05</span><br><small>Private Room 1</small></div>
+<div><span>● CAM 06</span><br><small>Third Floor Bar</small></div>
+<div><span>● CAM 07</span><br><small>Staff Lounge</small></div>
+</div>
+  <div class="files">
+<div class="file"><h3>◉ CAM 01</h3><div class="time">Casino First Floor | CCTV Main Entrance | REC</div><pre>07.00 – Blackout CCTV diduga untuk maintenance
+
+08.10 – CCTV menyala kembali
+
+09.00 – Blackout CCTV diduga untuk maintenance
+
+11.00 – CCTV menyala kembali
+
+17.49 – Yuna memasuki kasino dengan menggunakan gaun berwarna hitam.
+
+20.46 – Agents tampak di frame CCTV. Agent RHYS tertangkap mengupil.
+
+21.13 – Rombongan polisi memasuki frame CCTV.</pre></div>
+<div class="file"><h3>◉ CAM 02</h3><div class="time">Casino First Floor | CCTV VIP Check In | REC</div><pre>07.00 – Blackout CCTV diduga untuk maintenance
+
+08.10 – CCTV menyala kembali
+
+09.00 – Blackout CCTV diduga untuk maintenance
+
+11.00 – CCTV menyala kembali
+
+17.51 – Yuna mengonfirmasi kedatangannya di kasino bersama dengan VIP Attendant.</pre></div>
+<div class="file"><h3>◉ CAM 03</h3><div class="time">Casino First Floor | CCTV First Floor Bar | REC</div><pre>07.00 – Blackout CCTV diduga untuk maintenance
+
+08.10 – CCTV menyala kembali
+
+09.00 – Blackout CCTV diduga untuk maintenance
+
+11.00 – CCTV menyala kembali
+
+17.53 – Yuna tertangkap di ujung CCTV, sedang melintasi bar. Diduga menuju ke elevator.
+
+18.30 – Rachel tampak di frame CCTV bersama dengan seorang Floor Manager.
+
+18.34 – Rachel dan Floor Manager tampak meninggalkan frame CCTV dengan raut kecewa.
+
+20.48 – Agents tertangkap di ujung CCTV, sedang melintasi bar. Diduga menuju ke elevator.</pre></div>
+<div class="file"><h3>◉ CAM 04</h3><div class="time">Casino Second Floor | CCTV Second Floor Bar | REC</div><pre>07.00 – Blackout CCTV diduga untuk maintenance
+
+08.10 – CCTV menyala kembali
+
+08.14 – Seorang yang berseragam staf dan bertopi hitam membersihkan bar.
+
+08.48 – Seseorang yang berseragam staf dan bertopi hitam tersebut pergi meninggalkan bar.
+
+09.00 – Blackout CCTV diduga untuk maintenance
+
+11.00 – CCTV menyala kembali
+
+17.45 – Joey dan Lindsay tertangkap CCTV sedang berbincang di areal bar. Holland juga tertangkap CCTV sedang meracik minuman di balik meja bar.
+
+17.57 – Holland mulai meracik martini yang diduga dipersiapkan untuk Yuna.
+
+17.59 – Holland memasukkan sesuatu ke dalam martini tersebut.
+
+18.03 – Lindsay dan Joey keluar dari frame CCTV.
+
+18.04 – Holland keluar dari frame CCTV.
+
+18.27 – Yolla memasuki frame CCTV, tampak mulai bercengkerama dengan beberapa pengunjung di areal bar.
+
+18.29 – Holland kembali ke bar dan mulai meracik minuman.
+
+18.33 – Yolla keluar dari frame CCTV.
+
+18.40 – Joey dan Rachel memasuki frame CCTV, tampak sedang berbincang intens.
+
+18.55 – Rachel pergi untuk menjalankan permainan kartu di salah satu meja permainan.
+
+18.57 – Joey keluar dari frame CCTV.
+
+19.00 – Holland keluar dari frame CCTV.
+
+19.06 – Yolla dan beberapa klien tampak berbincang di areal meja permainan.
+
+19.32 – Holland kembali ke bar dan mulai meracik minuman.
+
+19.58 – Rachel keluar dari frame CCTV sambil berbincang di telepon.
+
+20.00 – Perhatian pengunjung tampak mengarah ke stage dikarenakan ada pertunjukan.
+
+20.32 – Rachel kembali ke areal permainan dan menjalankan salah satu meja permainan kartu.
+
+20.34 – Joey masuk ke dalam frame CCTV, terlihat memantau selama beberapa saat.
+
+20.51 – Joey meninggalkan frame CCTV.
+
+20.53 – Yolla meninggalkan frame CCTV.</pre></div>
+<div class="file"><h3>◉ CAM 05</h3><div class="time">Casino Second Floor | CCTV Private Room 1 | REC</div><pre>07.00 – Blackout CCTV diduga untuk maintenance
+
+08.10 – CCTV menyala kembali
+
+09.00 – Blackout CCTV diduga untuk maintenance
+
+11.00 – CCTV menyala kembali
+
+17.45 – Yolla berada di dalam Private Room 1 bersama dengan beberapa klien. Tampak bercengkerama sambil meminum segelas martini.
+
+18.02 – Yolla keluar dari frame CCTV.
+
+18.36 – Yolla memasuki frame CCTV dan segera bercengkerama dengan klien di dalam Private Room 1.
+
+19.03 – Yolla dan beberapa klien keluar dari frame CCTV.</pre></div>
+<div class="file"><h3>● CAM 06</h3><div class="time">Casino Third Floor | CCTV Third Floor Bar | REC</div><pre>07.00 – Blackout CCTV diduga untuk maintenance
+
+08.10 – CCTV menyala kembali
+
+09.00 – Blackout CCTV diduga untuk maintenance
+
+11.00 – CCTV menyala kembali
+
+17.45 – Rachel sedang menyiapkan VIP Lounge, diduga terkonfirmasi bahwa ada tamu VIP yang datang berkunjung.
+
+17.57 – Yuna terlihat berada di VIP Lounge, langsung disambut oleh Rachel yang tampak sudah stand by.
+
+18.00 – Yuna dan Rachel keluar dari frame CCTV, diduga memasuki VIP Room 2 bersamaan.</pre></div>
+<div class="file"><h3>● CAM 07</h3><div class="time">Casino Third Floor | CCTV Staff Lounge | REC</div><pre>07.00 – Blackout CCTV diduga untuk maintenance
+
+08.10 – CCTV menyala kembali
+
+09.00 – Blackout CCTV diduga untuk maintenance
+
+11.00 – CCTV menyala kembali
+
+18.04 – Rachel tertangkap CCTV sedang berada di areal Staff Lounge, tampak sedikit gelisah.
+
+18.26 – Rachel keluar dari frame CCTV.</pre></div>
+</div>
+</div>
+
+</div>
 <script>
+function showArchive(which, btn){
+  document.querySelectorAll('.archive-panel').forEach(p=>p.classList.remove('active'));
+  document.querySelectorAll('.tab-btn').forEach(b=>b.classList.remove('active'));
+  document.getElementById('panel-'+which).classList.add('active');
+  btn.classList.add('active');
+}
+
 function unlock(){
 const password=document.getElementById("password").value;
 if(password==="immobulus"){
